@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maffia Cat Coin</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #e0e0e0;
+            background: url('bg.gif') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: rgba(28, 28, 28, 0.9);
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #e0e0e0;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: #e0e0e0;
+            text-decoration: none;
+        }
+
+        .hero {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 100px 0;
+            text-align: center;
+            margin-top: 80px; /* Adjust for fixed header */
+        }
+
+        .hero-content {
+            padding: 50px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero-content img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5em;
+            color: #e0e0e0;
+            margin: 0;
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            color: #b3b3b3;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: rgba(28, 28, 28, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .intro, .roadmap, .tokenomics, .narrative {
+            padding: 50px 0;
+            border-bottom: 1px solid #333;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .intro h2, .roadmap h2, .tokenomics h2, .narrative h2 {
+            font-size: 2em;
+            color: #e0e0e0;
+            text-align: center;
+        }
+
+        .image-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-section img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: rgba(28, 28, 28, 0.9);
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        footer ul li a {
+            color: #e0e0e0;
+            text-decoration: none;
+        }
+
+        footer p {
+            color: #b3b3b3;
+            margin: 10px 0 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 0;
+            }
+
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            header nav ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: rgba(28, 28, 28, 0.9);
+                position: fixed;
+                width: 100%;
+                top: 0;
+                left: -100%;
+                transition: left 0.3s ease-in-out;
+            }
+
+            header nav ul li {
+                display: block;
+                margin: 15px 0;
+            }
+
+            header nav ul li a {
+                font-size: 1.2em;
+            }
+
+            .menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                color: #e0e0e0;
+                font-size: 2em;
+                cursor: pointer;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            .hero {
+                padding: 70px 20px;
+                margin-top: 60px;
+            }
+
+            .hero-content h2 {
+                font-size: 2em;
+            }
+
+            .hero-content p {
+                font-size: 1em;
+            }
+
+            .container {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .intro, .roadmap, .tokenomics, .narrative {
+                padding: 30px 0;
+            }
+
+            .intro h2, .roadmap h2, .tokenomics h2, .narrative h2 {
+                font-size: 1.5em;
+            }
+
+            .image-section img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+                margin: 10px 0;
+            }
+
+            footer ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            footer ul li {
+                margin: 5px 0;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        .menu-active {
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Maffia Cat Coin</h1>
+            <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#roadmap">Roadmap</a></li>
+                    <li><a href="#tokenomics">Tokenomics</a></li>
+                    <li><a href="#narrative">Narrative</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img src="cat-boss-logo.jpg" alt="Mafia Cat">
+            <h2>Welcome to the Maffia Cat Coin Empire</h2>
+            <p>Decentralizing Power with Feline Cunning</p>
+        </div>
+    </section>
+
+    <section id="introduction" class="intro">
+        <div class="container">
+            <h2>About Maffia Cat Coin</h2>
+            <p>Maffia Cat Coin is more than a cryptocurrency; it’s a movement led by a charismatic and cunning cat from the digital underworld.</p>
+            <div class="image-section">
+                <img src="img1.jpg" alt="Image 1 Description">
+                <img src="img2.jpg" alt="Image 2 Description">
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap" class="roadmap">
+        <div class="container">
+            <h2>Roadmap</h2>
+            <ul>
+                <li><strong>Q3 2024 - Initiation Phase:</strong> Concept Development, Whitepaper Release, Website Launch, Community Building</li>
+                <li><strong>Q4 2024 - Pre-Launch Phase:</strong> Smart Contract Development, Audit, Marketing Campaign, Initial Liquidity Pool, Pre-Sale</li>
+                <li><strong>Q3 2025 - Launch Phase:</strong> Token Launch, Exchange Listings, Liquidity Pool Expansion, Burn Events</li>
+                <li><strong>Q4 2025 - Expansion Phase:</strong> Partnerships, Staking, NFT Marketplace, Governance</li>
+                <li><strong>Q1 2026 - Utility Phase:</strong> Integration with DeFi, Real-World Use Cases, Mobile Wallet</li>
+                <li><strong>Q2 2026 - Maturity Phase:</strong> Cross-Chain Compatibility, Advanced Features, Global Adoption, Final Burn Event</li>
+            </ul>
+            <div class="image-section">
+                <img src="img3.jpg" alt="Image 3 Description">
+            </div>
+        </div>
+    </section>
+
+    <section id="tokenomics" class="tokenomics">
+        <div class="container">
+            <h2>Tokenomics</h2>
+            <p>Total Supply: 1,000,000,000 MCC (Maffia Cat Coin)</p>
+            <p>Distribution Breakdown:</p>
+            <ul>
+                <li>Pre-Sale: 20% (200,000,000 MCC)</li>
+                <li>Liquidity Pool: 25% (250,000,000 MCC)</li>
+                <li>Team and Advisors: 15% (150,000,000 MCC) - Locked for 12 months</li>
+                <li>Marketing and Partnerships: 10% (100,000,000 MCC)</li>
+                <li>Staking Rewards: 15% (150,000,000 MCC)</li>
+                <li>Community and Ecosystem Development: 10% (100,000,000 MCC)</li>
+                <li>Reserve: 5% (50,000,000 MCC)</li>
+            </ul>
+            <p>Transaction Fees:</p>
+            <ul>
+                <li>Buy/Sell Transaction Fee: 5%</li>
+                <li>2% to Liquidity Pool</li>
+                <li>1% Burn</li>
+                <li>1% Marketing and Development</li>
+                <li>1% Community Rewards</li>
+            </ul>
+            <div class="image-section">
+                <img src="img4.jpg" alt="Image 4 Description">
+            </div>
+        </div>
+    </section>
+
+    <section id="narrative" class="narrative">
+        <div class="container">
+            <h2>Narrative</h2>
+            <p>In the cryptoverse, where new projects spring up daily, a unique digital feline emerged, capturing the hearts and minds of enthusiasts worldwide—Maffia Cat Coin. This isn't just another cryptocurrency; it's a movement led by a charismatic and cunning cat from the digital underworld.</p>
+            <p>The journey begins in the shady alleys of the blockchain, where Maffia Cat assembled a team of tech-savvy misfits and visionary strategists. With a mission to decentralize power and bring wealth to its loyal community, Maffia Cat Coin's whitepaper was unveiled, promising innovative features and real-world applications.</p>
+            <p>The pre-launch phase saw Maffia Cat Coin gathering its strength, forging alliances, and setting up its initial operations. The community grew, drawn by the promise of a decentralized feline utopia. As the coin launched, it took the cryptoverse by storm, with liquidity pools flourishing and tokens burning in a fiery display of commitment to value.</p>
+            <p>As Maffia Cat's empire expanded, strategic partnerships and new utilities were introduced. The introduction of staking, an NFT marketplace, and governance mechanisms ensured that the community had multiple ways to engage and benefit from their holdings. The narrative of Maffia Cat Coin was no longer confined to the digital realm; it was becoming a real-world phenomenon.</p>
+            <p>By the first half of 2026, Maffia Cat Coin had integrated into various DeFi platforms, making it a versatile tool in the financial toolbox of its holders. Real-world businesses began accepting it, and a sleek mobile wallet ensured users could manage their wealth on the go. Cross-chain compatibility and advanced features kept Maffia Cat Coin at the cutting edge of blockchain technology.</p>
+            <p>As the year drew to a close, Maffia Cat Coin's final burn event marked the culmination of a successful journey. With a reduced supply and increased scarcity, the value soared, cementing its place in the annals of cryptocurrency history. The loyal community, who had supported Maffia Cat from the shadows to the limelight, reveled in their shared success.</p>
+            <p>Maffia Cat Coin wasn't just a project; it was a revolution, a testament to what a united community, driven by innovation and a touch of feline cunning, could achieve in the world of blockchain.</p>
+            <p>However, Maffia Cat wasn't alone. He had a family—a syndicate of equally cunning and ruthless mafia cats. Together, they ruled the cryptoverse with an iron paw, buying out competitors and ruthlessly eliminating jeets. This family of Maffia Cats ensured that their empire remained unchallenged, striking fear into the hearts of all who dared oppose them.</p>
+            <div class="image-section">
+                <img src="img5.jpg" alt="Image 5 Description">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <ul>
+                <li><a href="https://twitter.com/maffiacatcoin">Twitter</a></li>
+                <li><a href="https://discord.com/maffiacatcoin">Discord</a></li>
+                <li><a href="https://telegram.org/maffiacatcoin">Telegram</a></li>
+            </ul>
+            <p>&copy; 2024 Maffia Cat Coin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('header nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation classes when sections come into view
+        const sections = document.querySelectorAll('.intro, .roadmap, .tokenomics, .narrative');
+
+        const options = {
+            root: null,
+            threshold: 0.1,
+            rootMargin: "0px"
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slideIn');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Toggle mobile menu
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navUl = document.querySelector('header nav ul');
+
+        menuToggle.addEventListener('click', () => {
+            navUl.classList.toggle('menu-active');
+        });
+    </script>
+</body>
+</html>
